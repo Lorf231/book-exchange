@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { User } from '@/types/user';
 import toast from 'react-hot-toast';
+import Icon from '../Icon/Icon';
 
 interface BookCreationFormProps {
   users: User[];
@@ -35,7 +36,9 @@ export const BookCreationForm = ({ users, onSubmit, onCancel }: BookCreationForm
     <div className="card p-6 mb-6">
       <div className="flex justify-between items-center mb-4">
         <h3 className="heading-2">Створення книги</h3>
-        <button onClick={onCancel} className="btn-ghost px-2 py-1">✕</button>
+        <button onClick={onCancel} className="btn-ghost px-2 py-1">
+          <Icon name="x" width={20} height={20} />
+        </button>
       </div>
       
       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -69,6 +72,7 @@ export const BookCreationForm = ({ users, onSubmit, onCancel }: BookCreationForm
         
         <div className="space-y-4 flex flex-col justify-between">
           <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:bg-gray-50 transition-colors h-full flex items-center justify-center">
+            <Icon name="upload" className="mx-auto text-gray-400 mb-2" width={32} height={32} />
             <input 
               type="file" accept="image/*"
               onChange={e => setFile(e.target.files ? e.target.files[0] : null)}

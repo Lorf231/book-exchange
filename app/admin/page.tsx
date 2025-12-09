@@ -11,15 +11,17 @@ import { useAdminStore } from '@/lib/store/adminStore';
 import { AdminTabs } from '@/components/admin/AdminTabs';
 import { AdminBooksTab } from '@/components/admin/AdminBooksTab';
 import { AdminUsersTab } from '@/components/admin/AdminUsersTab';
+import Icon from '@/components/Icon/Icon';
 
 export default function AdminPage() {
   const router = useRouter();
   
   const { user, isAuthenticated, isLoading: authLoading } = useAuth();
-  
-  const { fetchAllBooks } = useBookStore();
-  const { users, fetchUsers} = useAdminStore();
+  const { fetchAllBooks, isLoading: booksLoading } = useBookStore();
+  const { users, fetchUsers, isLoading: usersLoading } = useAdminStore();
 
+  const isLoading = booksLoading || usersLoading;
+  
   const [activeTab, setActiveTab] = useState<'users' | 'books'>('books');
 
   useEffect(() => {
@@ -62,7 +64,8 @@ export default function AdminPage() {
           <p className="text-sm text-gray-500 mt-1">Ви: <span className="font-bold">{user.displayName}</span></p>
         </div>
         <button onClick={handleRefresh} className="btn-link text-sm">
-          🔄 Оновити дані
+          <Icon name="refresh" className={isLoading ? "animate-spin" : ""} width={16} height={16} />
+          Оновити дані
         </button>
       </div>
 

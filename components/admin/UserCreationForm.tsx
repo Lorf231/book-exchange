@@ -1,13 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import Icon from '../Icon/Icon';
 
 interface UserCreationFormProps {
   onSubmit: (data: { name: string, email: string }) => Promise<void>;
   onCancel: () => void;
 }
 
-export const UserCreationForm = ({ onSubmit, onCancel }: UserCreationFormProps) => {
+export const UserCreationForm = ({ onSubmit}: UserCreationFormProps) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,7 +27,7 @@ export const UserCreationForm = ({ onSubmit, onCancel }: UserCreationFormProps) 
     <div className="card p-6 max-w-lg mb-6">
       <div className="flex justify-between items-center mb-4">
         <h3 className="heading-2">Новий користувач</h3>
-        <button onClick={onCancel} className="btn-ghost px-2 py-1">✕</button>
+        <Icon name="x" width={20} height={20} />
       </div>
       
       <form onSubmit={handleSubmit} className="space-y-4">

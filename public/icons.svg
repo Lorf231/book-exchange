@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  
+  <symbol id="book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+  </symbol>
+
+  <symbol id="search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="11" cy="11" r="8"/>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+  </symbol>
+
+  <symbol id="user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+    <circle cx="12" cy="7" r="4"/>
+  </symbol>
+
+  <symbol id="logout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+    <polyline points="16 17 21 12 16 7"/>
+    <line x1="21" y1="12" x2="9" y2="12"/>
+  </symbol>
+
+  <symbol id="trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="3 6 5 6 21 6"/>
+    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2-2v2"/>
+  </symbol>
+
+  <symbol id="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="12" y1="5" x2="12" y2="19"/>
+    <line x1="5" y1="12" x2="19" y2="12"/>
+  </symbol>
+
+  <symbol id="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18"/>
+    <line x1="6" y1="6" x2="18" y2="18"/>
+  </symbol>
+
+  <symbol id="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="20 6 9 17 4 12"/>
+  </symbol>
+
+  <symbol id="refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M23 4v6h-6"/>
+    <path d="M1 20v-6h6"/>
+    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+  </symbol>
+
+  <symbol id="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+  </symbol>
+
+  <symbol id="upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+    <polyline points="17 8 12 3 7 8"/>
+    <line x1="12" y1="3" x2="12" y2="15"/>
+  </symbol>
+
+  <symbol id="email" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+  </symbol>
+
+</svg>
