@@ -23,7 +23,7 @@ const BookCardContent = ({ book, actionSlot }: { book: Book, actionSlot?: React.
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
     </div>
-    <div className="p-4 flex-grow flex flex-col justify-between">
+    <div className="p-4 grow flex flex-col justify-between">
       <div>
         <h3 className="font-bold text-lg text-gray-900 leading-tight mb-1 line-clamp-1" title={book.name}>
           {book.name}

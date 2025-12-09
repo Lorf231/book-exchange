@@ -34,7 +34,7 @@ export default function MyBooksPage() {
         await addBook({ name, author, file, ownerId: user.uid });
         setName(''); setAuthor(''); setFile(null);
         (document.getElementById('fileInput') as HTMLInputElement).value = '';
-      } catch (error) { } finally { setIsSubmitting(false); }
+      } finally { setIsSubmitting(false); }
   };
 
   const handleDelete = async (id: string) => {

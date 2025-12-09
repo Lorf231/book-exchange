@@ -3,7 +3,6 @@
 import { useEffect, useState, use } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import emailjs from '@emailjs/browser';
 import { doc, getDoc } from 'firebase/firestore';
@@ -15,7 +14,6 @@ import { bookService } from '@/lib/services/bookService';
 
 export default function BookDetailsPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
-  const router = useRouter();
   
   const { currentBook, isLoading, fetchBookById, clearCurrentBook } = useBookStore();
   const { user } = useAuth();

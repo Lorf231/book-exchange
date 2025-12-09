@@ -28,7 +28,7 @@ const initialState : BookState = {
     isLoading: false,
 };
 
-export const useBookStore = create<IBookStore>((set, get) => ({
+export const useBookStore = create<IBookStore>((set) => ({
   ...initialState,
 
   fetchMyBooks: async (userId: string) => {
