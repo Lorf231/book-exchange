@@ -11,14 +11,14 @@ export const Navbar = () => {
   const pathname = usePathname();
   const { user, logout } = useAuth();
 
+  const isAuthPage = pathname === '/login' || pathname === '/register';
+
   const handleLogout = async () => {
     try {
       await logout();
       toast.success('Ви вийшли з акаунту');
       router.push('/login');
-    } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : "Невідома помилка";
-      console.log(errorMessage);
+    } catch {
       toast.error('Помилка при виході');
     }
   };
@@ -46,9 +46,11 @@ export const Navbar = () => {
             </div>
 
             <div className="hidden sm:ml-8 sm:flex sm:space-x-4 items-center">
-              <Link href="/books" className={getLinkClass('/books')}>
-                <span>Бібліотека</span>
-              </Link>
+              {user && (
+                <Link href="/books" className={getLinkClass('/books')}>
+                  <span>Бібліотека</span>
+                </Link>
+              )}
               
               {user && (
                 <Link href="/me/books" className={getLinkClass('/me/books')}>
@@ -95,43 +97,47 @@ export const Navbar = () => {
                 </button>
               </div>
             ) : (
-              <div className="flex items-center gap-4">
-                <Link 
-                  href="/login" 
-                  className="text-gray-600 hover:text-gray-900 font-medium text-sm"
-                >
-                  Увійти
-                </Link>
-                <Link 
-                  href="/register" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors shadow-sm"
-                >
-                  Реєстрація
-                </Link>
-              </div>
+              !isAuthPage && (
+                <div className="flex items-center gap-4">
+                  <Link 
+                    href="/login" 
+                    className="text-gray-600 hover:text-gray-900 font-medium text-sm"
+                  >
+                    Увійти
+                  </Link>
+                  <Link 
+                    href="/register" 
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors shadow-sm"
+                  >
+                    Реєстрація
+                  </Link>
+                </div>
+              )
             )}
           </div>
         </div>
       </div>
       
-      <div className="sm:hidden border-t border-gray-100 flex justify-around p-2 bg-gray-50 fixed bottom-0 left-0 right-0 z-50 pb-safe">
-          <Link href="/books" className="text-xs text-gray-600 p-2 flex flex-col items-center gap-1">
-            <Icon name="search" width={20} height={20} />
-            <span>Книги</span>
-          </Link>
-          {user && (
+      {user && (
+        <div className="sm:hidden border-t border-gray-100 flex justify-around p-2 bg-gray-50 fixed bottom-0 left-0 right-0 z-50 pb-safe">
+            <Link href="/books" className="text-xs text-gray-600 p-2 flex flex-col items-center gap-1">
+              <Icon name="search" width={20} height={20} />
+              <span>Книги</span>
+            </Link>
+            
             <Link href="/me/books" className="text-xs text-gray-600 p-2 flex flex-col items-center gap-1">
               <Icon name="book" width={20} height={20} />
               <span>Мої</span>
             </Link>
-          )}
-          {user?.role === 'admin' && (
-            <Link href="/admin" className="text-xs text-purple-600 p-2 flex flex-col items-center gap-1">
-              <Icon name="shield" width={20} height={20} />
-              <span>Адмін</span>
-            </Link>
-          )}
-      </div>
+            
+            {user?.role === 'admin' && (
+              <Link href="/admin" className="text-xs text-purple-600 p-2 flex flex-col items-center gap-1">
+                <Icon name="shield" width={20} height={20} />
+                <span>Адмін</span>
+              </Link>
+            )}
+        </div>
+      )}
     </nav>
   );
 };
